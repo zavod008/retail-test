@@ -1,0 +1,25 @@
+.column-gap(@value: 15px) {
+  & {
+    margin-right: -@value;
+    margin-left: -@value;
+  }
+
+  & > [class*="col-"],
+  & > [class*="col"] {
+    padding-right: @value;
+    padding-left: @value;
+  }
+
+  @media (max-width: @sizes[desktop-extra]) {
+    & {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    & > [class*="col-"],
+    & > [class*="col"] {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}

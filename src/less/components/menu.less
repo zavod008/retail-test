@@ -1,0 +1,41 @@
+.footer-menu {
+  display: flex;
+
+  @media (max-width: @sizes[tablet]) {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  &__list {
+    &:not(:last-of-type) {
+      margin-right: 80px;
+
+      @media (max-width: @sizes[phone]) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    color: @colors[text];
+    font-weight: 500;
+    font-size: .875rem;
+  }
+}
+
+.sidebar-menu {
+
+  &__item {
+    margin-bottom: 35px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+}

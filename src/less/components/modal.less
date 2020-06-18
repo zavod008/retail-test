@@ -1,0 +1,56 @@
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+  background-color: @colors[bg];
+}
+
+.modal {
+  background: @colors[bg];
+  display: none;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  padding: 0;
+
+  @media (max-width: @sizes[phone]) {
+    padding: 15px;
+  }
+
+  &__title {
+    font-size: 1.875rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: .875rem;
+    color: @colors[text];
+  }
+}
+
+.request-modal {
+  max-width: 680px;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+}
+
+.success-modal {
+
+  &__icon {
+    width: 35px;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+}

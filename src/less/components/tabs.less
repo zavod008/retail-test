@@ -1,0 +1,28 @@
+.tabs {
+
+  &__caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+
+    li {
+      font-weight: 700;
+      color: @colors[text];
+      font-size: 1.125rem;
+      cursor: pointer;
+
+      &.active {
+        color: @colors[main];
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

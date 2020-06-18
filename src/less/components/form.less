@@ -1,0 +1,147 @@
+.form {
+  width: 100%;
+}
+
+.form-block {
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+.form-label {
+  font-size: 1.25rem;
+  color: @colors[text];
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  transition: .3s;
+  font-weight: 500;
+}
+
+.form-input {
+  min-width: 0;
+  background-color: @colors[form-disable];
+  height: 80px;
+  border-radius: 10px;
+  padding: 25px 30px 0 30px;
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: 500;
+
+  @media (max-width: @sizes[desktop-large]) {
+    padding-right: 45px;
+  }
+
+  &:focus + .form-label,
+  &.has-value + .form-label {
+    top: 15px;
+    font-size: .875rem;
+    transform: translateY(0);
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &:-moz-submit-invalid {
+    box-shadow: none;
+  }
+
+  &:-moz-ui-invalid {
+    box-shadow:none;
+  }
+}
+
+.form-error {
+  position: absolute;
+  bottom: -20px;
+  font-size: .75rem;
+  font-weight: 500;
+  color: @colors[form-error];
+  left: 30px;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  right: -40px;
+
+  @media (max-width: @sizes[desktop-large]) {
+    right: 15px;
+  }
+
+  &__success {
+    background: url(../images/icons/accept.svg) center no-repeat;
+  }
+
+  &__error {
+    background: url(../images/icons/denied.svg) center no-repeat;
+  }
+}
+
+.form-checkbox {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  color: @colors[text];
+  font-weight: 500;
+  padding-left: 60px;
+  display: inline-block;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ span {
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  span {
+    height: 39px;
+    width: 39px;
+    border-radius: 10px;
+    background-color: #474747;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+
+    &:after {
+      content: '';
+      width: 12px;
+      height: 20px;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+      position: relative;
+      top: -1px;
+      display: none;
+    }
+  }
+}

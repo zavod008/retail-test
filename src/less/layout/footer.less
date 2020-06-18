@@ -1,0 +1,39 @@
+.footer {
+  padding: 165px 0 55px 0;
+  background: url(../images/footer__bg.png) no-repeat top center;
+
+  @media (max-width: @sizes[phone]) {
+    padding: 20px 0;
+  }
+
+  &__container {
+    max-width: 1200px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__row {
+    .column-gap(55px);
+  }
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.footer-credit {
+
+  @media (max-width: @sizes[desktop-large]) {
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: @colors[text-light];
+    font-size: .875rem;
+    font-weight: 500;
+  }
+}

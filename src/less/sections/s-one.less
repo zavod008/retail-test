@@ -1,0 +1,67 @@
+.s-one {
+  background: url(../images/sections/s-one__bg.png) top center no-repeat;
+  background-position-y: 45px;
+  position: relative;
+  padding-bottom: 280px;
+
+  &__title {
+    color: #fff;
+    margin-bottom: 65px;
+    font-size: 6rem;
+    font-weight: 900;
+    position: relative;
+
+    @media (max-width: @sizes[phone]) {
+      font-size: 4rem;
+    }
+  }
+
+  &__subtitle {
+    color: @colors[text];
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 20px;
+    left: 330px;
+    font-weight: 700;
+
+    @media (max-width: @sizes[tablet]) {
+      position: static;
+    }
+  }
+
+  &__row {
+    .column-gap(40px);
+  }
+
+  &__card {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: @sizes[desktop]) {
+      width: 60vw;
+    }
+  }
+}
+
+.s-one-list {
+  margin-bottom: 60px;
+
+  &__item {
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    color: @colors[main];
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  &__content {
+    color: @colors[text];
+    font-size: .875rem;
+    font-weight: 700;
+  }
+}

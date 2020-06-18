@@ -1,0 +1,41 @@
+.s-two {
+  padding-bottom: 170px;
+
+  &__subtitle {
+    margin-bottom: 80px;
+  }
+}
+
+.s-two-list {
+
+  &__item {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: @sizes[tablet]) {
+      align-items: center;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
+  &__title{
+    color: #fff;
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  &__content {
+    font-weight: 700;
+    font-size: .875rem;
+  }
+}

@@ -1,0 +1,7 @@
+.animate-block {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.animate-block.animate {
+  opacity: 1;
+}

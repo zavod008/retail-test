@@ -1,0 +1,37 @@
+.modal.request-modal#request-modal
+    .modal__content.request-modal__content
+        .modal__title.request-modal__title Заявка на карту
+        #app
+            validation-observer(v-slot="{ invalid }", ref="form")
+                form.form(@submit.prevent="toSuccessModal")
+                    .form-block
+                        validation-provider(v-slot="{ errors, invalid }", rules='alpha_spaces|min:10')
+                            input.form-field.form-input(type='text', name='name', required, v-model="form.name", :class="hasValue(form.name)")
+                            label.form-label ФИО
+                            span.form-error {{errors[0]}}
+                            span.form-icon(:class="getErrorIcon(invalid, hasValue(form.name))")
+                    .form-block
+                        validation-provider(v-slot="{ errors, invalid }")
+                            input.form-field.form-input(type='email', name='email', required, v-model="form.email", :class="hasValue(form.email)")
+                            label.form-label Электронный адрес
+                            span.form-error {{errors[0]}}
+                            span.form-icon(:class="getErrorIcon(invalid, hasValue(form.email))")
+                    .form-block
+                        validation-provider(v-slot="{ errors, invalid }", rules='min:16')
+                            input.form-field.form-input(type='tel', name='phone', required, v-model="form.phone", :class="hasValue(form.phone)", v-mask="'+7 ### ### ## ##'")
+                            label.form-label Номер телефона
+                            span.form-error {{errors[0]}}
+                            span.form-icon(:class="getErrorIcon(invalid, hasValue(form.phone))")
+                    .form-block
+                        validation-provider(:rules="{ required: { allowFalse: false } }")
+                            label.form-checkbox
+                                input(type='checkbox', required, v-model="form.check")
+                                span
+                                | Я соглашаюсь на
+                                |
+                                a(href='#') обработку
+                                |
+                                | моих персональных данных
+                                |
+                    .form-block
+                        button.button.form-submit(type='submit', :disabled="invalid") Заказать сейчас

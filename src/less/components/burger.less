@@ -1,0 +1,43 @@
+.burger {
+  width: 65px;
+  height: 60px;
+  background: url(../images/icons/burger.svg);
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &.active {
+    background: url(../images/icons/burger-active.svg);
+  }
+
+  &_main {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -120px;
+
+    @media (max-width: @sizes[desktop]) {
+      position: static;
+      transform: translateY(0);
+      margin-left: 20px;
+    }
+  }
+
+  &_modal {
+    position: absolute;
+    top: -10px;
+    right: -25px;
+    background: url(../images/icons/burger-modal.svg);
+
+    @media (max-width: @sizes[desktop-large]) {
+      right: 0;
+    }
+
+    @media (max-width: @sizes[phone]) {
+      top: 5px;
+    }
+  }
+}
